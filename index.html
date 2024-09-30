@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Roulette Wheel</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <video playsinline autoplay muted loop poster="polina.jpg" id="bgvid">
+    <source src="BG 2.mp4" type="video/mp4">
+  </video>
+
+  <!--<button type="button" class="btn2" id="goSS" onclick="openFullscreen();"></button>-->
+
+  <button type="button" class="btn3" id="goFSS"></button>
+
+  <script>
+    /* Get the element you want displayed in fullscreen */ 
+    var elem = document.getElementById("goSS");
+
+    /* Function to open fullscreen mode */
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+    }
+  </script>
+
+  <script>
+    var goFSS = document.getElementById('goFSS');
+
+    goFSS.addEventListener('click', function() {
+      var end = Date.now() + (55 * 120);
+      var colors = ['#a864fd', '#29cdff','#78ff44','#ff718d','#fdff6a'];
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: colors
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: colors
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }, false);
+  </script>
+
+  <!-- partial:index.partial.html -->
+  <div class="main">
+    <button type="button" class="btn" id="spin" onclick="setTimeout(function() {
+      document.getElementById('goFSS').click();
+    }, 9500); new Audio('wheel.mp3').play();">
+      <span class="btn-label"></span>
+    </button>
+
+    <button type="button" class="btn btn-reset" id="reset">
+      <span class="btn-label"></span>
+    </button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="plate" id="plate">
+
+    <ul class="inner">
+     <li class="number"><label><input type="radio" name="pit" value="9" /><span class="pit">9</span></label></li>
+   <li class="number"><label><input type="radio" name="pit" value="6" /><span class="pit">6</span></label></li>
+
+     <li class="number"><label><input type="radio" name="pit" value="3" /><span class="pit">3</span></label></li>
+      <li class="number"><label><input type="radio" name="pit" value="8" /><span class="pit">8</span></label></li>
+           <li class="number"><label><input type="radio" name="pit" value="5" /><span class="pit">5</span></label></li>
+     <li class="number"><label><input type="radio" name="pit" value="2" /><span class="pit">2</span></label></li>
+     <li class="number"><label><input type="radio" name="pit" value="7" /><span class="pit">7</span></label></li>
+ <li class="number"><label><input type="radio" name="pit" value="4" /><span class="pit">4</span></label></li>
+  
+  <li class="number"><label><input type="radio" name="pit" value="1" /><span class="pit">1</span></label></li>
+  <li class="number"><label><input type="radio" name="pit" value="0" /><span class="pit">0</span></label></li>
+    </ul>
+
+<div class="circle">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+    <div class="data">
+      <div class="data-inner">
+        <div class="mask"></div>
+
+        <div class="result">
+          
+    </div>
+  </div>
+  <div class="previous-results">
+    
+  </div>
+
+</div>
+
+  
+
+
+
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'></script><script  src="./script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>
