@@ -22,7 +22,7 @@ $spin.on('click', function(e) {
 
 
   var rvalues = [];
-  var percentages = [10, 25, 25, 25, 25, 10, 25, 25, 25, 25];
+  var percentages = [9, 30, 30, 30, 30, 30, 30, 9, 30, 30];
 
   for (var i = 0; i <= 9; i++) {
     var count = Math.round((percentages[i] / 100) * 1000);
@@ -56,7 +56,7 @@ $spin.on('click', function(e) {
       color = '#ff000000';
     }
     if (randomNumber == 0) {
-      color = 'url("Quai Ly (1).png")';
+      color = 'url("Hop Fruittea.png")';
     }
     if (randomNumber == 1) {
       color = 'url("HK stick 1.png")';
@@ -77,7 +77,7 @@ $spin.on('click', function(e) {
       color = 'url("Stick Oi Hong.png")';
     }
     if (randomNumber == 7) {
-      color = 'url("STICK x4 1.png")';
+      color = 'url("Hop Milktea.png")';
     }
     if (randomNumber == 8) {
       color = 'url("TT stick 1.png")';
@@ -91,7 +91,7 @@ $spin.on('click', function(e) {
     $('.result').css({'background-image': ''+color+''});
     $data.addClass('reveal');
     $inner.addClass('rest');
-    
+      $reset.addClass('disabled').prop('disabled','disabled').show();
     $thisResult = '<li class="previous-result color-'+ color +'"><span class="previous-number">'+ randomNumber +'</span><span class="previous-color">'+ color +'</span></li>';
      
     $('.previous-list').prepend($thisResult);
@@ -107,19 +107,20 @@ $spin.on('click', function(e) {
 });
 
 
-
-
-
 $reset.on('click', function() {
   // remove the spinto data attr so the ball 'resets'
   $inner.attr('data-spinto','').removeClass('rest');
   $(this).hide();
   $spin.show();
+
   $data.removeClass('reveal');
 
   setTimeout(function() {
     $spin.focus(); // Tự động đặt trỏ chuột vào nút spin
   }, 0);
+
+
+
 
 
 

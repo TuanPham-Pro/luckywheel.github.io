@@ -201,7 +201,7 @@ div:fullscreen {
 }
 .main {
 position: relative;
-padding-top: 40px;
+padding-top: 150px;padding-left: 800px;
   width: 690px;
   margin: 0 auto;
 }
@@ -411,8 +411,8 @@ background-color: Transparent;
     overflow: hidden;
  outline: none; 
     position: absolute;
-    left: -320px;
-   top: -100px;
+    left: 800px;
+   top: 150px;
   padding: 0;
   margin: 0;
   display: inline-block;
